@@ -1,0 +1,6 @@
+module Pods_igniteshoesapp {
+  umbrella header "Pods-igniteshoesapp-umbrella.h"
+
+  export *
+  module * { export * }
+}
