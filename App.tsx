@@ -1,22 +1,22 @@
-import { StatusBar } from 'react-native';
+import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
 import { NativeBaseProvider } from 'native-base';
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { StatusBar } from 'react-native';
 
 import { Routes } from './src/routes';
 
-import { THEME } from './src/theme';
 import { Loading } from './src/components/Loading';
-
-import { OneSignal } from 'react-native-onesignal';
-
-
+import { THEME } from './src/theme';
 
 import { CartContextProvider } from './src/contexts/CartContext';
-
-OneSignal.initialize("393332da-1e78-4a81-866b-e753a8c60aa7");
+import { useEffect } from 'react';
+import { oneSignalInitialize } from './src/libs/onesignal';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+
+  useEffect(() => {
+    oneSignalInitialize();
+  }, []);
 
   return (
     <NativeBaseProvider theme={THEME}>
