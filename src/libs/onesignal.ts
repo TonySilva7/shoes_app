@@ -17,6 +17,10 @@ function oneSignalInitialize() {
       : '393332da-1e78-4a81-866b-e753a8c60aa7'
 
   if (oneSignalAppId) {
+    console.log('oneSignalAppId', oneSignalAppId);
+    console.log('Platform.OS', Platform.OS);
+    
+    
     OneSignal.initialize(oneSignalAppId);
   }
 
