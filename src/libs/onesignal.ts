@@ -12,6 +12,12 @@ function oneSignalInitialize() {
     OneSignal.initialize(oneSignalAppId);
     OneSignal.User.addEmail('tony@mail.com')
     OneSignal.User.addTag('userType', 'singer');
+    OneSignal.User.addTag('myUser', 'Tony Silva');
+
+
+    // remover tag e email
+    // OneSignal.User.removeTag('userType');
+    // OneSignal.User.removeEmail('tony@mail.com')
   }
 
   if (Platform.OS === 'ios') {
