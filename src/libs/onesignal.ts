@@ -1,12 +1,13 @@
 import OneSig, { OneSignal } from 'react-native-onesignal';
 
 import { Platform } from 'react-native';
+import {ONESIGN_APP_ID_ANDROID, ONESIGN_APP_ID_IOS} from '@env'
 
 function oneSignalInitialize() {
 
   const oneSignalAppId = Platform.OS === 'ios'
-      ? 'eu-nao-tenho-um-app-id-para-ios'
-      : '393332da-1e78-4a81-866b-e753a8c60aa7'
+      ? ONESIGN_APP_ID_IOS
+      : ONESIGN_APP_ID_ANDROID;
 
   if (oneSignalAppId) {
     OneSignal.initialize(oneSignalAppId);
